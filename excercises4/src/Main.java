@@ -1,0 +1,93 @@
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    static void main(String[] args) {
+//Napisz program, który rysuje prostokąt z gwiazdek o wymiarach podanych przez użytkownika.
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("podaj width");
+        int width = scanner.nextInt();
+        System.out.println("podaj height");
+        int height = scanner.nextInt();
+        drawRectangle(width, height);
+
+//    Napisz program, który wyświetla piramidę z gwiazdek o wysokości podanej przez użytkownika.
+
+        System.out.println("podaj szerokosc piramidy");
+        int pyramideHeight = scanner.nextInt();
+        drawTree(pyramideHeight);
+
+//        Napisz program, który tworzy tablicę dwuwymiarową (macierz) 3x3, wypełnia ją liczbami od 1 do 9,
+
+
+        int[][] matrix = createMatrix();
+        System.out.println(Arrays.deepToString(matrix));
+
+        printMatrix(createMatrix());
+
+        printSzachownica();
+    }
+
+    public static void printSzachownica() {
+        int size = 8;
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if (i+j % 2 == 0){
+                    System.out.print("#");
+                }
+                else System.out.print(" ");
+
+            }
+
+            System.out.println();
+
+        }
+        System.out.println();
+    }
+
+
+    public static int[][] createMatrix(){
+        int[][] macierz = new int[3][3];
+        int first = 1;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                macierz[i][j] = first;
+                first++;
+            }
+        }
+        return macierz;
+    }
+
+    public static void printMatrix(int[][] matrix){
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(matrix[i][j]);
+            }
+            System.out.println();
+        }
+    }
+
+    public static void drawTree(int pyramideHeight) {
+        for (int i = 1; i <= pyramideHeight; i++) {
+            for (int j = 1; j <= pyramideHeight - i; j++) {
+                System.out.print(" ");
+            }
+            for (int k = 1; k <= (2 * i) - 1; k++) {
+                System.out.print("*");
+            }
+            System.out.println(" ");
+        }
+    }
+
+
+    public static void drawRectangle(int width, int height) {
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                System.out.print("*");
+            }
+            System.out.println(" ");
+        }
+    }
+}
+
