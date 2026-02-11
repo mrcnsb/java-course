@@ -28,7 +28,6 @@ public class Main {
                 if (i + j % 2 == 0) {
                     System.out.print("#");
                 } else System.out.print(" ");
-
             }
             System.out.println();
         }
