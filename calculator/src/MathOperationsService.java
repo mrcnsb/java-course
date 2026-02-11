@@ -6,9 +6,7 @@ public class MathOperationsService {
     public static void run() {
         Scanner scanner = new Scanner(System.in);
         List<Character> operations = List.of('+', '-', '*', '/', '%', '^');
-
         while (true) {
-
             double firstNumber;
             double secondNumber;
             char operator;
@@ -20,7 +18,6 @@ public class MathOperationsService {
                 continue;
             }
             firstNumber = scanner.nextDouble();
-
             System.out.println("Jakie działanie chcesz wykonać? +, -, *, /, %, ^");
             operator = scanner.next().charAt(0);
 
@@ -67,7 +64,6 @@ public class MathOperationsService {
             }
 
             System.out.println("Wynik: " + result);
-
             System.out.println("Czy chcesz wykonać kolejną operację? (t/n)");
             char decision = scanner.next().charAt(0);
 
